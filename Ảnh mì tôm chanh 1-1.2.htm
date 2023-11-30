@@ -1,0 +1,305 @@
+
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+
+<link rel="stylesheet" type="text/css" href="themes/view/css/ddsmoothmenu.css" />
+<link rel="stylesheet" type="text/css" href="themes/view/css/slidedown-menu2.css" />
+<link rel="stylesheet" type="text/css" href="themes/view/css/basic.css" />
+<link rel="stylesheet" type="text/css" href="themes/view/css/style.css" />
+
+<script type="text/javascript" src="themes/view/js/jquery.js"></script>
+<script type="text/javascript" src="themes/view/js/slider.js"></script>
+<script type="text/javascript" src="themes/view/js/scripts.js"></script>
+<script type="text/javascript" src="themes/view/js/ddsmoothmenu.js"></script>
+<script type="text/javascript" src="themes/view/js/slidedown-menu2.js"></script>
+<script type="text/javascript" src="themes/view/js/adv.js"></script>
+<script type="text/javascript" src="themes/view/js/swfobject.js"></script>
+<script type="text/javascript" src="themes/view/js/jquery.cycle.all.latest.js"></script>
+<script type="text/javascript" src="themes/admin/js/jquery-validate.js"></script>
+<script type="text/javascript" src="editor/tinymce/jscripts/tiny_mce/plugins/media/js/embed.js"></script>
+
+
+
+<script type="text/javascript">
+
+ddsmoothmenu.init({
+	mainmenuid: "smoothmenu1", //menu DIV id
+	orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+	classname: 'ddsmoothmenu', //class added to menu's outer DIV
+	//customtheme: ["#1c5a80", "#18374a"],
+	contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+})
+</script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L1QJMYW8WN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-L1QJMYW8WN');
+</script>
+
+
+
+
+</head>
+    <div id="divAdRight" style="DISPLAY: none; POSITION: absolute; TOP: 0px">
+			    </div>
+    <div id="divAdLeft" style="DISPLAY: none; POSITION: absolute; TOP: 0px">
+		    </div>
+    <script>
+        function FloatTopDiv()
+        {
+            startLX = ((document.body.clientWidth -MainContentW)/2)-LeftBannerW-LeftAdjust , startLY = TopAdjust+80;
+            startRX = ((document.body.clientWidth -MainContentW)/2)+MainContentW+RightAdjust , startRY = TopAdjust+80;
+            var d = document;
+            function ml(id)
+            {
+                var el=d.getElementById?d.getElementById(id):d.all?d.all[id]:d.layers[id];
+                el.sP=function(x,y){this.style.left=x + 'px';this.style.top=y + 'px';};
+                el.x = startRX;
+                el.y = startRY;
+                return el;
+            }
+            function m2(id)
+            {
+                var e2=d.getElementById?d.getElementById(id):d.all?d.all[id]:d.layers[id];
+                e2.sP=function(x,y){this.style.left=x + 'px';this.style.top=y + 'px';};
+                e2.x = startLX;
+                e2.y = startLY;
+                return e2;
+            }
+            window.stayTopLeft=function()
+            {
+                if (document.documentElement && document.documentElement.scrollTop)
+                    var pY =  document.documentElement.scrollTop;
+                else if (document.body)
+                    var pY =  document.body.scrollTop;
+                if (document.body.scrollTop > 30){startLY = 3;startRY = 3;} else {startLY = TopAdjust;startRY = TopAdjust;};
+                ftlObj.y += (pY+startRY-ftlObj.y)/16;
+                ftlObj.sP(ftlObj.x, ftlObj.y);
+                ftlObj2.y += (pY+startLY-ftlObj2.y)/16;
+                ftlObj2.sP(ftlObj2.x, ftlObj2.y);
+                setTimeout("stayTopLeft()", 1);
+            }
+            ftlObj = ml("divAdRight");
+            //stayTopLeft();
+            ftlObj2 = m2("divAdLeft");
+            stayTopLeft();
+        }
+        function ShowAdDiv()
+        {
+            var objAdDivRight = document.getElementById("divAdRight");
+            var objAdDivLeft = document.getElementById("divAdLeft");       
+            if (document.body.clientWidth < 1000)
+            {
+                objAdDivRight.style.display = "none";
+                objAdDivLeft.style.display = "none";
+            }
+            else
+            {
+                objAdDivRight.style.display = "block";
+                objAdDivLeft.style.display = "block";
+                FloatTopDiv();
+            }
+        } 
+    </script>
+    <script>
+    document.write("<script type='text/javascript' language='javascript'>MainContentW = 1000;LeftBannerW = 130;RightBannerW = 125;LeftAdjust = 10;RightAdjust = 0;TopAdjust = 10;ShowAdDiv();window.onresize=ShowAdDiv;;<\/script>");
+    </script>
+
+<script type="text/javascript">
+$(function(){
+
+		$("#btnSearch").click(function(){
+			var form = document.searchForm;
+			var txtSearch = document.searchForm.txtSearch;alert(txtSearch.value);
+			form.action = 'tim-kiem-'+ txtSearch.value+'-0.html';
+			form.submit();
+		});
+	}
+)
+$(function(){
+    
+   if ($('#banner-flash')) {
+      swfobject.embedSWF("./themes/view/images/Banner-Full.swf", "banner-flash", "1000px", "111px", "9.0.0", "/expressInstall.swf", {}, {wmode:'transparent'}, {});
+    }
+});
+</script>
+<body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-44968604-1', 'havietfoods.vn');
+  ga('send', 'pageview');
+
+</script>
+<div class="nentrong">
+<div id="wapper-body">
+	<div id="menu-top-latest">
+		<p>
+			<span></span>
+			<span style="padding-left:20px;">Hotline: 0981.828.686</span>
+		</p>
+				<ul class="language" style="">
+			<li><a href="english.html" title="English">English</a></li>
+		</ul>
+		<div class="search">
+			<form id="searchForm" name="searchForm" action="" method="post">
+				<span>Tìm kiếm</span>
+				<input type="text" name="txtSearch" id="txtSearch" onblur ="if (this.value==''){this.value='Nhập từ khóa...';}" onfocus = "if (this.value=='Nhập từ khóa...') {this.value = '';}" value="Nhập từ khóa..."/>
+				<input type="submit" id="btnSearch" name="btnSearch" class="btnsearch" value="&nbsp;"/>
+			</form>
+		</div>
+		<ul>
+			<li><a href="trang-chu.html" title="Ha Viet Food"><img src="./themes/view/images/icon-home.png"/>Trang chủ</a></li>
+			<li><a href="site-map.html" title="So do website"><img src="./themes/view/images/icon-sitemap.png"/>Site map</a></li>
+			<li><a href="lien-he.html" title="Lien he"><img src="./themes/view/images/icon-lienhe.png"/>Liên hệ</a></li>
+		</ul>
+	</div>
+	<div id="Banner">
+		<div><img src = "/images/haviet.jpg" width="999"></div>
+	</div><div id="menu-top">
+	<div id="smoothmenu1" class="ddsmoothmenu">
+		<ul>
+<li><a  class='active' href='trang-chu.html'>Trang chủ</a></li>
+<li><a class='' href='Gioi-thieu.html'>Giới thiệu</a><ul>
+<li><a class='' href='Gioi-thieu-Chung.html'>Giới thiệu Chung</a></li>
+<li><a class='' href='Lich-su-Hinh-thanh.html'>Lịch sử Hình thành</a></li>
+<li><a class='' href='Co-cau-to-chuc.html'>Cơ cấu tổ chức</a></li>
+<li><a class='' href='Tam-nhin-chien-luoc.html'>Tầm nhìn chiến lược</a></li>
+<li><a class='' href='Chinh-sach-Chat-luong.html'>Chính sách Chất lượng</a></li>
+</ul>
+</li>
+<li><a class='' href='San-pham.html'>Sản phẩm</a><ul>
+<li><a class='' href='OMNI.html'>OMNI</a><ul>
+<li><a class='' href='Omni-Tom-chanh.html'>Omni Tôm chanh</a></li>
+<li><a class='' href='Omni-Bo-cay.html'>Omni Bò cay</a></li>
+<li><a class='' href='Omni-Xao-kho.html'>Omni Xào khô</a></li>
+<li><a class='' href='Omni-Vi-Lau-Thai.html'>Omni Vị Lẩu Thái</a></li>
+<li><a class='' href='Omni-Bo-Ham-Ngu-Vi.html'>Omni Bò Hầm Ngũ Vị</a></li>
+<li><a class='' href='Omni-Kitchen.html'>Omni Kitchen</a></li>
+<li><a class='' href='Omni-Chao-Dau-Xanh.html'>Omni Cháo Đậu Xanh</a></li>
+</ul>
+</li>
+<li><a class='' href='VIAMI.html'>VIAMI</a><ul>
+<li><a class='' href='Viami-Tom-Chua-Cay.html'>Viami Tôm Chua Cay</a></li>
+<li><a class='' href='Viami-Pho-Ga-vang.html'>Viami Phở Gà vàng</a></li>
+</ul>
+</li>
+<li><a class='' href='BINH-DAN.html'>BÌNH DÂN</a><ul>
+<li><a class='' href='Mi-Binh-Dan-Tom-Ga.html'>Mì Bình Dân Tôm Gà</a></li>
+<li><a class='' href='Mi-Binh-Dan-Kraft.html'>Mì Bình Dân Kraft</a></li>
+<li><a class='' href='Mi-Lau.html'>Mì Lẩu</a></li>
+<li><a class='' href='Mi-Can.html'>Mì Cân</a></li>
+</ul>
+</li>
+<li><a class='' href='BUN-PHO-THI.html'>BÚN PHỐ THỊ</a></li>
+<li><a class='' href='PHO-NGON-PHO-CO.html'>PHỞ NGON PHỐ CỔ</a><ul>
+<li><a class='' href='Pho-Bat.html'>Phở Bát</a></li>
+<li><a class='' href='Pho-Goi.html'>Phở Gói</a></li>
+<li><a class='' href='Pho-Sach-Ha-Viet.html'>Phở Sạch Hà Việt</a></li>
+<li><a class='' href='Pho-Tron.html'>Phở Trộn</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class='' href='Tin-tuc.html'>Tin tức</a><ul>
+<li><a class='' href='Tin-tuc-Su-kien.html'>Tin tức - Sự kiện</a></li>
+<li><a class='' href='Trach-nhiem-Cong-dong.html'>Trách nhiệm Cộng đồng</a></li>
+<li><a class='' href='Goc-Bao-chi.html'>Góc Báo chí</a></li>
+<li><a class='' href='Van-hoa-Am-thuc.html'>Văn hóa Ẩm thực</a></li>
+</ul>
+</li>
+<li><a class='' href='Tuyen-dung.html'>Tuyển dụng</a><ul>
+<li><a class='' href='Thong-tin-Tuyen-dung.html'>Thông tin Tuyển dụng</a></li>
+</ul>
+</li>
+<li><a class='' href='Thi-Truong.html'>Thị Trường</a><ul>
+<li><a class='' href='He-thong-Phan-phoi.html'>Hệ thống Phân phối</a></li>
+<li><a class='' href='Hop-tac-Phan-phoi.html'>Hợp tác Phân phối</a></li>
+</ul>
+</li>
+</ul>
+		<span style="display:none;">
+			<a href="vietnamese.html"><img src="./themes/view/images/Vn.jpg"/></a>
+			<a href="english.html"><img src="./themes/view/images/Eng.jpg"/></a>
+		</span>
+		<br style="clear: left" />
+	</div>
+</div>	<div id="header">
+	<div class="header-right">
+		<div id="container">
+			<div style="overflow: hidden;" id="slideshow">
+				<ul style="display: block;" id="nav">
+					<li id="prev"><a href="#">Previous</a></li>
+					<li id="next"><a href="#">Next</a></li>
+				</ul>
+			
+				<ul id="slides">
+									<li>
+						<a href="http://havietfoods.vn/PHO-NGON-PHO-CO.html" title="Pho-Pho-Thang 1 -2.jpg">	
+							<img src="./upload/hinhanh/Pho-Pho-Thang 1 -2.jpg" alt="Pho-Pho-Thang 1 -2.jpg">
+						</a>
+					</li>
+									<li>
+						<a href="http://havietfoods.vn/OMNI.html" title="Omni-My-Bo-Cay-web.jpg">	
+							<img src="./upload/hinhanh/Omni-My-Bo-Cay-web.jpg" alt="Omni-My-Bo-Cay-web.jpg">
+						</a>
+					</li>
+									<li>
+						<a href="http://havietfoods.vn/OMNI.html" title="Omni-Chao-Dau-Xanh-Thang 9-10.jpg">	
+							<img src="./upload/hinhanh/Omni-Chao-Dau-Xanh-Thang 9-10.jpg" alt="Omni-Chao-Dau-Xanh-Thang 9-10.jpg">
+						</a>
+					</li>
+									<li>
+						<a href="http://havietfoods.vn/BINH-DAN.html" title="My-Binh-Dan-Thang 11-12.jpg">	
+							<img src="./upload/hinhanh/My-Binh-Dan-Thang 11-12.jpg" alt="My-Binh-Dan-Thang 11-12.jpg">
+						</a>
+					</li>
+									<li>
+						<a href="" title="Mi-Tom-Chanh-Tom chanh.jpg">	
+							<img src="./upload/hinhanh/Mi-Tom-Chanh-Tom chanh.jpg" alt="Mi-Tom-Chanh-Tom chanh.jpg">
+						</a>
+					</li>
+									<li>
+						<a href="" title="">	
+							<img src="./upload/hinhanh/" alt="">
+						</a>
+					</li>
+								</ul>
+			</div>
+		</div>
+	</div>
+</div>	<div id="footer">
+		<div class="menu-footer">
+			<ul>
+								<li class=""><a href="OMNI.html" title="OMNI"><img src="./themes/view/images/icon-menu-bottom.png"/>OMNI</a></li>
+								<li class=""><a href="PHO-NGON-PHO-CO.html" title="PHỞ NGON PHỐ CỔ"><img src="./themes/view/images/icon-menu-bottom.png"/>PHỞ NGON PHỐ CỔ</a></li>
+								<li class="li-last"><a href="BINH-DAN.html" title="BÌNH DÂN"><img src="./themes/view/images/icon-menu-bottom.png"/>BÌNH DÂN</a></li>
+							</ul>
+		</div>
+		
+		
+
+
+
+		</div>
+	</div>
+</div>
+</div>
+</body>
+</html>
+		
